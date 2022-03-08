@@ -1,0 +1,37 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+.navbar{
+    display: flex;
+    /* flex-direction: row; */
+    padding: 1.25rem 2.68rem;
+    background-color: #101010;
+    color: #ffffff;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navStart{
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 36px;
+}
+
+.navEnd{
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    font-family: "Inter",sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.profileName{
+    margin-right: 25px;
+}
+
+.image{
+    border-radius: 22px;
+}

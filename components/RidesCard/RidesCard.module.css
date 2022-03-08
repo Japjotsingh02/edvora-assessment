@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+.Card{
+    display: flex;
+    background: #171717;
+    margin: 0rem 2.68rem .8125rem;
+    border-radius: 10px;
+    padding: 1.5rem 1.8125rem;
+}
+
+.ridesImage{
+    border-radius: 5px;
+}
+
+.Details{
+    color: #cfcfcf;
+    font-family: "Inter",sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    flex: 1;
+}
+
+.Details > *{
+    line-height: 22px;
+    margin-bottom: 8px;
+    margin-left: 44px;
+}
+
+.location{
+    display: flex;
+    justify-content: space-between;
+}
+
+.locationDetails > *{
+    background: rgba(0, 0, 0, 0.56);
+    border-radius: 16px;
+    padding: 4px 10px;
+}
+
+.locationDetails :first-child{
+    margin-right: 24px;
+}
+
+/* @media only screen and (max-width:800px){ */
+    /* .locationDetails{ */
+        /* display: flex; */
+        /* flex-direction: column; */
+    /* } */
+  /* } */

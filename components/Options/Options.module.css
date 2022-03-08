@@ -1,0 +1,12 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+.select{
+    display: flex;
+    width: 100%;
+    margin-top: 12.5px;
+    padding: 8px 12px;
+    background: #232323;
+    border-radius: 4.68775px;
+    font-size: 1.0625rem;
+    color: #FFFFFF;
+    font-family:  "SF Pro Display",sans-serif;
+}
