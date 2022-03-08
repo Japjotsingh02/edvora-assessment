@@ -5,23 +5,12 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar/Navbar';
 import RidesBar from '../components/RidesBar/RidesBar';
 import { useStateValue } from '../components/StateProvider';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function Home({rides,user}) {
 
   const [{state,city},dispatch] = useStateValue();
   const [stateData,setStateData] = useState(false);
-
-  useEffect(()=>{
-    if(state){
-      let name ="state";
-      filter(state,name);
-    }
-    else if(city){
-      let name ="city";
-      filter(city,name);
-    }
-  },[state,city])
 
   const router = useRouter();
   const states=[];
@@ -54,7 +43,8 @@ export default function Home({rides,user}) {
   const [citiesState,setCitiesState] = useState(cities);
 
   // for filtering rides
-  function filter(data,name){
+  
+  const filter=useCallback((data,name)=>{
     if(name === "state"){
       const cloneArr = getInitialData();
       const filterState = cloneArr.filter((ride)=>ride.state === data);
@@ -69,7 +59,18 @@ export default function Home({rides,user}) {
       console.log(filterCity,':::::d');
       setSortArr(filterCity);
     }
-  }
+  },[filterCities,getInitialData]);
+
+  useEffect(()=>{
+    if(state){
+      let name ="state";
+      filter(state,name);
+    }
+    else if(city){
+      let name ="city";
+      filter(city,name);
+    }
+  },[state,city,filter]);
 
   function filterCities(data){
     const sortArr = rides.filter((ride)=>ride.state === data);

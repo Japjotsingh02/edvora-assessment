@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 .main {
-  min-height: calc(100vh - 84px);
+  min-height: 100vh;
   background-color: #383535;
 }
 
