@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import RidesCard from '../components/RidesCard/RidesCArd';
+import RidesCard from '../components/RidesCard/RidesCard';
 import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar/Navbar';
 import RidesBar from '../components/RidesBar/RidesBar';
@@ -15,10 +15,9 @@ export default function Home({rides,user}) {
   const router = useRouter();
   const states=[];
   const cities=[];
-  const [sortArr,setSortArr] = useState(getInitialData());
 
   // for sorting rides
-  function getInitialData(){
+  const getInitialData=()=>{
     const arr = [];
     rides.map((ride) => {
       states.push(ride.state);
@@ -40,28 +39,30 @@ export default function Home({rides,user}) {
     return arr;
   };
 
+  const [sortArr,setSortArr] = useState(getInitialData());
   const [citiesState,setCitiesState] = useState(cities);
 
   // for filtering rides
-  
-  const filter=useCallback((data,name)=>{
-    if(name === "state"){
-      const cloneArr = getInitialData();
-      const filterState = cloneArr.filter((ride)=>ride.state === data);
-      console.log(filterState,':::::d');
-      setSortArr(filterState);
-      setStateData(true);
-      filterCities(data);
-    }
-    else if(name==="city"){
-      const cloneArr = getInitialData();
-      const filterCity = cloneArr.filter((ride)=>ride.city === data);
-      console.log(filterCity,':::::d');
-      setSortArr(filterCity);
-    }
-  },[filterCities,getInitialData]);
 
   useEffect(()=>{
+
+    const filter=(data,name)=>{
+      if(name === "state"){
+        const cloneArr = getInitialData();
+        const filterState = cloneArr.filter((ride)=>ride.state === data);
+        console.log(filterState,':::::d');
+        setSortArr(filterState);
+        setStateData(true);
+        filterCities(data);
+      }
+      else if(name==="city"){
+        const cloneArr = getInitialData();
+        const filterCity = cloneArr.filter((ride)=>ride.city === data);
+        console.log(filterCity,':::::d');
+        setSortArr(filterCity);
+      }
+    }
+
     if(state){
       let name ="state";
       filter(state,name);
@@ -70,17 +71,18 @@ export default function Home({rides,user}) {
       let name ="city";
       filter(city,name);
     }
-  },[state,city,filter]);
 
-  function filterCities(data){
-    const sortArr = rides.filter((ride)=>ride.state === data);
-    const citiesArr=[];
-    sortArr.map((ride)=>{
-      citiesArr.push(ride.city);
-    });
-    console.log(citiesArr);
-    setCitiesState(citiesArr);
-  }
+    function filterCities(data){
+      const sortArr = rides.filter((ride)=>ride.state === data);
+      const citiesArr=[];
+      sortArr.map((ride)=>{
+        citiesArr.push(ride.city);
+      });
+      console.log(citiesArr);
+      setCitiesState(citiesArr);
+    }
+
+  },[state,city,rides]);
 
   return (
     <>
