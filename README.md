@@ -1,31 +1,54 @@
+# Getting Started with Next.js
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Edvora Rides Assessment
 
-First, run the development server:
+This is my first next.js project and it is given by edvora as a assessment. You have 3 rides bar - nearest rides, upcoming rides and past rides. As the name suggests, nearest rides shows you the rides sorted by their nearest values of distance from your user station code , upcoming rides shows you rides which has dates for future and past rides shows you rides which has date for the future. And in filter bar you can filter out rides which according to the states and cities.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Table of contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Overview
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### The challenge
 
-## Learn More
+Users should be able to:
 
-To learn more about Next.js, take a look at the following resources:
+- View the optimal layout for the site depending on their device's screen size.( Not responsive for mobile )
+- See the nearest rides, upcoming rides and past rides.
+- Can filter out rides according to states and cities.
+- Used vercel for hosting.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Links
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Solution URL: [solution](https://github.com/Japjotsingh02/edvora-assessment)
+- Live Site URL: [Edvora assessment](https://edvora-assessment1.vercel.app/)
+
+## My process
+
+### Built with
+
+- React Hooks
+- JSX
+- getStaticProps() for fetching data and static side generation and show data available at build time ahead of user's request.
+- Functonal or Stateless Components
+- Flexbox
+- CSS styles
+- Vercel hosting
+- Context API
+
+## Author
+
+- Website - [Amazon clone](https://edvora-assessment1.vercel.app/)
+- Linkedin - [linkedin](https://www.linkedin.com/in/japjot-singh-9a7b541a8/)
 
 ## Deploy on Vercel
 
