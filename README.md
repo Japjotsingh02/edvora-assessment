@@ -47,7 +47,7 @@ Users should be able to:
 
 ## Author
 
-- Website - [Amazon clone](https://edvora-assessment1.vercel.app/)
+- Website - [Edvora live website](https://edvora-assessment1.vercel.app/)
 - Linkedin - [linkedin](https://www.linkedin.com/in/japjot-singh-9a7b541a8/)
 
 ## Deploy on Vercel
